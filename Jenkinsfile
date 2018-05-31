@@ -22,7 +22,7 @@ node {
     echo 'build docker image' 
    }
    
-   stage('Deploy to Dev') {
-     echo 'Deploy to Dev'
+   stage('Deploy to Prod') {
+     echo 'Deploy to Prod'
    }
 }
