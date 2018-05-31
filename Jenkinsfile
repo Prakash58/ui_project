@@ -1,6 +1,6 @@
 node {
    
-   stage('Code Checkout') { // ...for display purposes
+   stage('Code Checkout') { // ..for display purposes
      git credentialsId: 'GithubID', url: 'https://github.com/bharathanenenu/ui_project.git'
    }
    stage('Build') {
