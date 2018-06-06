@@ -18,6 +18,7 @@ node {
       //withSonarQubeEnv("SonarQube") {
       //}
       withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.5.3') {
+         withSonarQubeEnv('sonarqube'){
           sh ' mvn clean org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar ' +
              //' -Dsonar.host.url=https://sonarcloud.io ' +
              ' -Dsonar.organization=cloudbhs '+ 
@@ -29,6 +30,7 @@ node {
              '-Dsonar.exclusions=**/*Test*/**'
           }
       }
+   }
    stage('Archive artifacts') {
      withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.5.3') {
        sh 'mvn install package'
